@@ -1,104 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap');
 
-body {
-  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
-  font-family: sans-serif;
-  padding: 20px;
-  height: 100vh;
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ================= COLOR SYSTEM ================= */
+:root {
+  --bg-list: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+  --bg-card: url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=80");
+
+  --menu-bg: #f7f3ee;
+  --card-bg: #fbf9f6;
+  --card-border: rgba(60,45,35,0.1);
+
+  --text-main: #2a2018;
+  --text-muted: #7a6a5a;
+  --text-soft: #9a8b7a;
+
+  --accent: #8b6b4f;
+  --accent-dark: #5e4634;
+}
+
+/* ================= BODY ================= */
+body {
+  background:
+    linear-gradient(rgba(12,9,7,0.92), rgba(12,9,7,0.92)),
+    var(--bg-list);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--text-main);
+  transition: background 0.6s ease;
+}
+
+body.card-mode {
+  background:
+    linear-gradient(rgba(12,9,7,0.85), rgba(12,9,7,0.85)),
+    var(--bg-card);
+}
+
+/* ================= MENU CARD ================= */
+.menu {
+  width: 100%;
+  max-width: 900px;
+  background: var(--menu-bg);
+  border-radius: 10px;
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* ================= HEADER ================= */
+.menu-header {
+  text-align: center;
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid var(--card-border);
+}
 
 h1 {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-h2 {
-  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 800;
 }
 
 .established {
-  font-style: italic;
-}
-
-h1, h2, p {
-  text-align: center;
-}
-
-.menu {
-    width: 80%;
-    background-color: burlywood;
-    padding: 20px;
-    max-width: 500px;
-    box-shadow: 10px 10px 5px grey;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-
-img {
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:-25px;
-}
-
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
-.bottom-line {
-  margin-top: 25px;
-}
-
-h1, h2 {
-  font-family: Impact, serif;
-}
-
-.item p {
-  display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 6px;
   font-size: 18px;
+  color: var(--text-muted);
 }
 
-.flavor, .dessert {
-  text-align: left;
-  width: 75%;
+.tagline {
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* ================= VIEW TOGGLE ================= */
+.view-toggle {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.view-toggle button {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.view-toggle button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.view-toggle button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ================= MAIN ================= */
+main {
+  padding: 48px;
+}
+
+.content-wrapper {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+main.switching .content-wrapper {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  margin-bottom: 56px;
+}
+
+section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  color: var(--accent-dark);
+  margin-bottom: 24px;
+}
+
+/* ================= LIST VIEW ================= */
+.list-view .menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-view .item {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.list-view .item:last-child {
+  border-bottom: none;
+}
+
+/* ================= CARD VIEW ================= */
+.card-view .content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.card-view section {
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* ================= MENU ITEMS (RESPONSIVE CORE) ================= */
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 1.4;
+  word-break: break-word;
 }
 
 .price {
-  text-align: right;
-  width: 25%;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
-/* FOOTER */
-
-footer {
-  font-size: 14px;
+/* ================= FOOTER ================= */
+.menu-footer {
+  padding: 32px;
+  text-align: center;
+  border-top: 1px solid var(--card-border);
 }
 
-.address {
-  margin-bottom: 5px;
+.menu-footer a {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent-dark);
 }
 
-a {
-  color: black;
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+  .item {
+    padding: 16px 0;
+    gap: 12px;
+  }
+
+  .name {
+    font-size: 17px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
 }
 
-a:visited {
-  color: black;
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .card-view .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 32px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
 }
 
-a:hover {
-  color: brown;
-}
+/* ================= STICKY SECTION HEADERS (MOBILE ONLY) ================= */
+@media (max-width: 600px) {
+  section {
+    position: relative;
+  }
 
-a:active {
-  color: whitesmoke;
+  section h2 {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--menu-bg);
+    padding: 12px 0 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .price {
+    align-self: flex-end;
+    font-size: 14px;
+  }
+
+  .list-view .item {
+    padding-bottom: 18px;
+  }
 }
