@@ -1,75 +1,71 @@
-# ☕ Camper Cafe Menu
+# ☕ Camper’s Café — Responsive Menu UI
 
-A cozy, vintage-styled cafe menu webpage featuring a rustic wooden aesthetic. Built with pure HTML and CSS to showcase coffee selections and delicious desserts.
+Camper’s Café is a responsive, aesthetic café menu interface built with a strong focus on layout adaptability, UX correctness, and visual restraint.
+The project explores how a single dataset can be presented through multiple layout paradigms while maintaining clarity, consistency, and smooth interaction.
 
-## 🌟 Features
-
-- Warm, vintage wooden theme
-- Rustic and cozy design aesthetic
-- Coffee and dessert sections
-- Clean, readable menu layout
-- Responsive design for all devices
-- Classic typography that matches the vintage vibe
-- Pure HTML & CSS - no frameworks needed
-
-## 🚀 Live Demo
+This is not a static design — it is a view-adaptive UI.
 
 Check out the live demo: [View Camper Cafe Menu](https://kishik-k.github.io/Cafe-Menu/
-<img width="1895" height="917" alt="Screenshot 2026-01-11 155341" src="https://github.com/user-attachments/assets/6b529956-632e-4fcb-8ab4-2280414c84bf" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42c604ef-51d0-45ca-8006-c121d2fbe16a" />![Uploading image.png…]()
+
+
 )
 
-## 🛠️ Technologies Used
+✨ Key Features
 
-- HTML5
-- CSS3
+List View & Card View Toggle
+Users can switch between a clean, editorial list layout and a modern card-based layout.
+The toggle is UX-safe: interactions are disabled mid-transition to prevent state conflicts.
 
-## 📋 Menu Sections
+Smooth Layout Transitions
+Transitions are handled without layout snapping by isolating animation layers, ensuring symmetry when switching between views.
 
-- ☕ **Coffee** - Our specialty brews and espresso drinks
-- 🍰 **Desserts** - Sweet treats to pair with your coffee
+Mode-Aware Background System
+The page background subtly adapts to the active view mode, reinforcing context without distracting from content.
 
-## 🎨 Design Style
+Mobile-First Responsiveness
+Menu items adapt intelligently across screen sizes:
 
-The menu features a vintage, woody aesthetic with:
-- Warm, earthy color palette
-- Rustic textures and styling
-- Classic, comfortable typography
-- Cozy coffeehouse atmosphere
-## 💻 Local Development
+Desktop: aligned name–price rows
 
-1. Clone this repository
-```bash
-   git clone https://github.com/yourusername/camper-cafe.git
-```
-2. Open `index.html` in your browser
-3. Enjoy the cozy cafe vibe!
+Tablet: increased touch spacing
 
-## 🎯 Project Purpose
+Mobile: stacked layout with improved readability
 
-This project was created to practice:
-- Semantic HTML structure
-- CSS styling techniques
-- Creating themed, cohesive designs
-- Building responsive layouts
-- Vintage/retro web design aesthetics
+Sticky Section Headers (Mobile)
+Category headers remain visible while scrolling on smaller screens, improving navigation and usability.
 
-## 📝 Customization
+Clean, Icon-Free Visual Design
+A warm, café-inspired color palette with restrained typography and elevation — focused on clarity rather than decoration.
 
-The menu is easy to customize:
-- Update menu items and prices in `index.html`
-- Modify colors and styling in `styles.css`
-- Add your own cafe branding and logo
+🛠 Tech Stack
 
-## 📄 License
+HTML5 — semantic structure
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+CSS3 — Grid, custom properties, responsive design
 
-## 🤝 Acknowledgments
+Vanilla JavaScript — view toggling, transition control
 
-Inspired by cozy coffee shops and vintage cafe aesthetics.
+No frameworks or libraries
 
----
+🎯 Design & Engineering Goals
 
-⭐ If you enjoyed this project, please give it a star!
+Prioritize UX correctness over visual gimmicks
+
+Avoid layout jank during complex transitions
+
+Ensure accessibility-friendly spacing and readability
+
+Keep the codebase understandable and extendable
+
+📱 Responsive Behavior Summary
+Device	Behavior
+Desktop	Two-column card view / aligned list view
+Tablet	Touch-friendly spacing, adaptive typography
+Mobile	Sticky headers, stacked items, clean price separation
+🚀 Why This Project
+
+This project was built to practice real-world frontend decision making:
+handling layout changes, animation timing, responsiveness, and user interaction states — not just styling.
 
 *Built with ☕ and lots of CSS*
