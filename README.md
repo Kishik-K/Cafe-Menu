@@ -6,7 +6,7 @@ The project explores how a single dataset can be presented through multiple layo
 This is not a static design — it is a view-adaptive UI.
 
 Check out the live demo: [View Camper Cafe Menu](https://kishik-k.github.io/Cafe-Menu/
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/299e14fb-8b2b-4d15-b68a-f5898896275f" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9a16cda5-8797-4401-9f46-c6ecd510b967" />
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42c604ef-51d0-45ca-8006-c121d2fbe16a" />
 
 
