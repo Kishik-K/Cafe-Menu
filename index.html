@@ -1,60 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet"/>
-  </head>
-  <body>
-    <div class="menu">
-      <main>
-        <h1>CAMPER'S CAFE</h1>
-        <p class="established">221B Baker's ST.</p>
-        <hr>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camper’s Café — Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="menu">
+
+    <!-- HEADER -->
+    <header class="menu-header">
+      <h1>Camper’s Café</h1>
+      <p class="established">221B Baker Street</p>
+      <p class="tagline">An Exquisite Coffee Experience</p>
+
+      <!-- VIEW TOGGLE -->
+      <div class="view-toggle">
+        <button id="listView" class="active">List</button>
+        <button id="cardView">Card</button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="menuContent" class="list-view">
+      <div class="content-wrapper">
+
+        <!-- COFFEE -->
         <section>
           <h2>Coffee</h2>
-          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/>
-          <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Caramel Macchiato</p><p class="price">3.75</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
-          </article>
+          <div class="menu-items">
+            <div class="item"><span class="name">French Vanilla</span><span class="price">$3.00</span></div>
+            <div class="item"><span class="name">Caramel Macchiato</span><span class="price">$3.75</span></div>
+            <div class="item"><span class="name">Pumpkin Spice</span><span class="price">$3.50</span></div>
+            <div class="item"><span class="name">Hazelnut</span><span class="price">$4.00</span></div>
+            <div class="item"><span class="name">Dark Mocha</span><span class="price">$4.50</span></div>
+          </div>
         </section>
+
+        <!-- DESSERTS -->
         <section>
           <h2>Desserts</h2>
-          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon"/>
-          <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>
-          </article>
+          <div class="menu-items">
+            <div class="item"><span class="name">Classic Donut</span><span class="price">$1.50</span></div>
+            <div class="item"><span class="name">Cherry Pie</span><span class="price">$2.75</span></div>
+            <div class="item"><span class="name">Cheesecake</span><span class="price">$3.00</span></div>
+            <div class="item"><span class="name">Cinnamon Roll</span><span class="price">$2.50</span></div>
+          </div>
         </section>
-      </main>
-      <hr class="bottom-line">
-      <footer>
-        <p>
-          <a href="https://github.com/Kishik-K?tab=overview&from=2025-12-01&to=2025-12-31" target="_blank">Visit our website</a>
-        </p>
-        <p class="address">a small open source project</p>
-      </footer>
-    </div>
-  </body>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="menu-footer">
+      <a href="https://github.com/Kishik-K" target="_blank">View on GitHub</a>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const menu = document.getElementById("menuContent");
+    const listBtn = document.getElementById("listView");
+    const cardBtn = document.getElementById("cardView");
+    const body = document.body;
+
+    let isSwitching = false;
+
+    function switchView(mode) {
+      if (isSwitching) return;
+      isSwitching = true;
+
+      listBtn.disabled = true;
+      cardBtn.disabled = true;
+
+      menu.classList.add("switching");
+
+      setTimeout(() => {
+        if (mode === "card") {
+          menu.classList.remove("list-view");
+          menu.classList.add("card-view");
+          body.classList.add("card-mode");
+          cardBtn.classList.add("active");
+          listBtn.classList.remove("active");
+        } else {
+          menu.classList.remove("card-view");
+          menu.classList.add("list-view");
+          body.classList.remove("card-mode");
+          listBtn.classList.add("active");
+          cardBtn.classList.remove("active");
+        }
+
+        menu.classList.remove("switching");
+        listBtn.disabled = false;
+        cardBtn.disabled = false;
+        isSwitching = false;
+      }, 350);
+    }
+
+    listBtn.onclick = () => switchView("list");
+    cardBtn.onclick = () => switchView("card");
+  </script>
+</body>
 </html>
