@@ -1,107 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camper’s Café — Menu</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Menu</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <div class="menu">
-
-    <!-- HEADER -->
     <header class="menu-header">
-      <h1>Camper’s Café</h1>
-      <p class="established">221B Baker Street</p>
-      <p class="tagline">An Exquisite Coffee Experience</p>
-
-      <!-- VIEW TOGGLE -->
+      <div class="menu-eyebrow">221-B Baker's Street</div>
+      <h1>Artisan Café</h1>
+      <p class="menu-sub">Handcrafted coffee & artisanal desserts</p>
       <div class="view-toggle">
-        <button id="listView" class="active">List</button>
-        <button id="cardView">Card</button>
+        <button class="active" data-view="list">List</button>
+        <button data-view="card">Card</button>
+        <button data-view="gallery">Gallery</button>
       </div>
     </header>
 
-    <!-- MAIN -->
-    <main id="menuContent" class="list-view">
+    <main class="list-view">
       <div class="content-wrapper">
-
-        <!-- COFFEE -->
-        <section>
-          <h2>Coffee</h2>
-          <div class="menu-items">
-            <div class="item"><span class="name">French Vanilla</span><span class="price">$3.00</span></div>
-            <div class="item"><span class="name">Caramel Macchiato</span><span class="price">$3.75</span></div>
-            <div class="item"><span class="name">Pumpkin Spice</span><span class="price">$3.50</span></div>
-            <div class="item"><span class="name">Hazelnut</span><span class="price">$4.00</span></div>
-            <div class="item"><span class="name">Dark Mocha</span><span class="price">$4.50</span></div>
+        <section class="menu-card coffee">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>Coffee</h2>
+            <div class="menu-items">
+              <div class="item">
+                <span class="name">Vanilla Latte</span>
+                <span class="price">$4.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Caramel Macchiato</span>
+                <span class="price">$5.00</span>
+              </div>
+              <div class="item">
+                <span class="name">Pumpkin Spice Latte</span>
+                <span class="price">$5.25</span>
+              </div>
+              <div class="item">
+                <span class="name">Hazelnut Coffee</span>
+                <span class="price">$4.25</span>
+              </div>
+              <div class="item">
+                <span class="name">Dark Mocha</span>
+                <span class="price">$4.75</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- DESSERTS -->
-        <section>
-          <h2>Desserts</h2>
-          <div class="menu-items">
-            <div class="item"><span class="name">Classic Donut</span><span class="price">$1.50</span></div>
-            <div class="item"><span class="name">Cherry Pie</span><span class="price">$2.75</span></div>
-            <div class="item"><span class="name">Cheesecake</span><span class="price">$3.00</span></div>
-            <div class="item"><span class="name">Cinnamon Roll</span><span class="price">$2.50</span></div>
+        <section class="menu-card desserts">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+              <div class="item">
+                <span class="name">Glazed Donut</span>
+                <span class="price">$3.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Cherry Pie</span>
+                <span class="price">$6.00</span>
+              </div>
+              <div class="item">
+                <span class="name">Chocolate Cupcake</span>
+                <span class="price">$4.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Cinnamon Roll</span>
+                <span class="price">$4.00</span>
+              </div>
+            </div>
           </div>
         </section>
-
       </div>
+
+      <!-- GALLERY SECTION -->
+      <section class="gallery-section">
+        <h2>Coffee</h2>
+        <div class="gallery-grid">
+          <div class="gallery-tile coffee-1" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Vanilla Latte</div>
+              <div class="tile-price">$4.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-2" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Caramel Macchiato</div>
+              <div class="tile-price">$5.00</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-3" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Pumpkin Spice Latte</div>
+              <div class="tile-price">$5.25</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-4" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Hazelnut Coffee</div>
+              <div class="tile-price">$4.25</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-5" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Dark Mocha</div>
+              <div class="tile-price">$4.75</div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Desserts</h2>
+        <div class="gallery-grid">
+          <div class="gallery-tile dessert-1" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Glazed Donut</div>
+              <div class="tile-price">$3.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-2" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Cherry Pie</div>
+              <div class="tile-price">$6.00</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-3" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Chocolate Cupcake</div>
+              <div class="tile-price">$4.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-4" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Cinnamon Roll</div>
+              <div class="tile-price">$4.00</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="menu-footer">
-      <a href="https://github.com/Kishik-K" target="_blank">View on GitHub</a>
+      <a href="#">Visit Us</a>
+      <a href="https://github.com/Kishik-K" target="_blank">Git-Hub</a>
     </footer>
-
   </div>
 
-  <!-- SCRIPT -->
   <script>
-    const menu = document.getElementById("menuContent");
-    const listBtn = document.getElementById("listView");
-    const cardBtn = document.getElementById("cardView");
-    const body = document.body;
+    const buttons = document.querySelectorAll('.view-toggle button');
+    const main = document.querySelector('main');
 
-    let isSwitching = false;
-
-    function switchView(mode) {
-      if (isSwitching) return;
-      isSwitching = true;
-
-      listBtn.disabled = true;
-      cardBtn.disabled = true;
-
-      menu.classList.add("switching");
-
-      setTimeout(() => {
-        if (mode === "card") {
-          menu.classList.remove("list-view");
-          menu.classList.add("card-view");
-          body.classList.add("card-mode");
-          cardBtn.classList.add("active");
-          listBtn.classList.remove("active");
-        } else {
-          menu.classList.remove("card-view");
-          menu.classList.add("list-view");
-          body.classList.remove("card-mode");
-          listBtn.classList.add("active");
-          cardBtn.classList.remove("active");
-        }
-
-        menu.classList.remove("switching");
-        listBtn.disabled = false;
-        cardBtn.disabled = false;
-        isSwitching = false;
-      }, 350);
-    }
-
-    listBtn.onclick = () => switchView("list");
-    cardBtn.onclick = () => switchView("card");
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
+        
+        // Add switching class
+        main.classList.add('switching');
+        
+        setTimeout(() => {
+          // Update active button
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          // Update view
+          main.className = view + '-view';
+          
+          // Remove switching class
+          setTimeout(() => {
+            main.classList.remove('switching');
+          }, 100);
+        }, 350);
+      });
+    });
   </script>
 </body>
 </html>
