@@ -1,272 +1,505 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
 
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= COLOR SYSTEM ================= */
+/* VARIABLES */
 :root {
-  --bg-list: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
-  --bg-card: url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=80");
+  --ink: #1e1e1e;
+  --muted: #6b6863;
+  --paper: rgba(250,249,247,0.95);
+  --line: rgba(0,0,0,0.08);
+  --accent: #9b7a54;
 
-  --menu-bg: #f7f3ee;
-  --card-bg: #fbf9f6;
-  --card-border: rgba(60,45,35,0.1);
-
-  --text-main: #2a2018;
-  --text-muted: #7a6a5a;
-  --text-soft: #9a8b7a;
-
-  --accent: #8b6b4f;
-  --accent-dark: #5e4634;
+  --bg-list: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
+  --bg-card: url("https://images.unsplash.com/photo-1445116572660-236099ec97a0");
 }
 
-/* ================= BODY ================= */
+/* BODY */
 body {
+  font-family: 'Inter', sans-serif;
   background:
-    linear-gradient(rgba(12,9,7,0.92), rgba(12,9,7,0.92)),
+    linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)),
     var(--bg-list);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  color: var(--text-main);
-  transition: background 0.6s ease;
+  display: flex;
+  justify-content: center;
+  padding: 64px 24px;
+  transition: background 0.8s ease;
 }
 
-body.card-mode {
+/* ===== GALLERY BACKGROUND (WORKING FIX) ===== */
+body:has(.gallery-view) {
   background:
-    linear-gradient(rgba(12,9,7,0.85), rgba(12,9,7,0.85)),
+    linear-gradient(rgba(10,10,10,0.88), rgba(10,10,10,0.88)),
+    url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body:has(.card-view) {
+  background:
+    linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.78)),
     var(--bg-card);
 }
 
-/* ================= MENU CARD ================= */
+/* MENU */
 .menu {
   width: 100%;
-  max-width: 900px;
-  background: var(--menu-bg);
-  border-radius: 10px;
-  box-shadow:
-    0 40px 120px rgba(0,0,0,0.55),
-    inset 0 1px 0 rgba(255,255,255,0.7);
+  max-width: 1100px;
+  background: var(--paper);
+  padding: 88px 72px;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.45);
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .menu-header {
-  text-align: center;
-  padding: 56px 48px 40px;
-  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 96px;
+}
+
+.menu-eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 800;
+  font-size: 72px;
 }
 
-.established {
-  margin-top: 6px;
-  font-size: 18px;
-  color: var(--text-muted);
+.menu-sub {
+  color: var(--muted);
+  font-size: 15px;
 }
 
-.tagline {
-  margin-top: 14px;
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--text-soft);
-}
-
-/* ================= VIEW TOGGLE ================= */
+/* TOGGLE */
 .view-toggle {
-  margin-top: 28px;
+  margin-top: 36px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 24px;
 }
 
 .view-toggle button {
-  padding: 8px 20px;
-  background: transparent;
-  border: 1px solid var(--card-border);
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: 12px;
+  background: none;
+  border: none;
+  font-size: 13px;
   letter-spacing: 2px;
-  border-radius: 999px;
-  transition: all 0.25s ease;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.view-toggle button:hover {
+  color: var(--ink);
 }
 
 .view-toggle button.active {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
 }
 
-.view-toggle button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+/* ANIMATION */
+.content-wrapper {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* ================= MAIN ================= */
-main {
-  padding: 48px;
+main.switching .content-wrapper {
+  opacity: 0;
+  transform: translateY(18px);
 }
 
+/* CARD */
+.menu-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  margin-bottom: 96px;
+  overflow: hidden;
+}
+
+/* IMAGE HEADER */
+.card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-card.coffee .card-image {
+  background-image: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
+}
+
+.menu-card.desserts .card-image {
+  background-image: url("https://images.unsplash.com/photo-1499636136210-6f4ee915583e");
+}
+
+/* ===== VIEW TRANSITION FIX (FINAL) ===== */
 .content-wrapper {
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 main.switching .content-wrapper {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
 }
 
-/* ================= SECTIONS ================= */
-section {
-  margin-bottom: 56px;
+/* Prevent layout snap during view change */
+.gallery-view .menu-card {
+  transition: opacity 0.2s ease;
 }
 
-section h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  color: var(--accent-dark);
-  margin-bottom: 24px;
+/* Prevent interaction during transition */
+main.switching {
+  pointer-events: none;
 }
 
-/* ================= LIST VIEW ================= */
-.list-view .menu-items {
+/* CONTENT */
+.card-content {
+  padding: 56px;
+}
+
+.card-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+/* ITEMS */
+.menu-items {
   display: flex;
   flex-direction: column;
+  gap: 22px;
 }
 
-.list-view .item {
-  border-bottom: 1px solid var(--card-border);
-}
-
-.list-view .item:last-child {
-  border-bottom: none;
-}
-
-/* ================= CARD VIEW ================= */
-.card-view .content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-.card-view section {
-  background: var(--card-bg);
-  padding: 32px;
-  border-radius: 8px;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-}
-
-/* ================= MENU ITEMS (RESPONSIVE CORE) ================= */
 .item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 0;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
 }
 
 .name {
   font-size: 18px;
-  line-height: 1.4;
-  word-break: break-word;
 }
 
 .price {
-  font-weight: 600;
   color: var(--accent);
-  white-space: nowrap;
+  font-weight: 500;
 }
 
-/* ================= FOOTER ================= */
+/* CARD VIEW */
+.card-view .content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.card-view .menu-card {
+  margin-bottom: 0;
+}
+
+/* FOOTER */
 .menu-footer {
-  padding: 32px;
-  text-align: center;
-  border-top: 1px solid var(--card-border);
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu-footer a {
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   text-decoration: none;
-  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: var(--muted);
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 900px) {
-  .item {
-    padding: 16px 0;
-    gap: 12px;
-  }
-
-  .name {
-    font-size: 17px;
-  }
-
-  .price {
-    font-size: 15px;
-  }
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width: 768px) {
-  .card-view .content-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  main {
-    padding: 32px;
+  .menu {
+    padding: 56px 32px;
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 48px;
+  }
+
+  .card-content {
+    padding: 40px 28px;
+  }
+
+  .card-view .content-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 
-/* ================= STICKY SECTION HEADERS (MOBILE ONLY) ================= */
-@media (max-width: 600px) {
-  section {
-    position: relative;
-  }
+/* ===== GALLERY VIEW ADD-ON (FIXED IMAGES) ===== */
+.gallery-section {
+  display: none;
+  margin-top: 120px;
+}
 
-  section h2 {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    background: var(--menu-bg);
-    padding: 12px 0 10px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--card-border);
-  }
+/* ===== NON-BLOCKING VIEW SWITCH FIX ===== */
+/* Default visible */
+.menu-card,
+.gallery-section {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
-  .item {
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-    gap: 6px;
-  }
+/* Gallery mode */
+.gallery-view .menu-card {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
 
-  .price {
-    align-self: flex-end;
-    font-size: 14px;
-  }
+.gallery-view .gallery-section {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-  .list-view .item {
-    padding-bottom: 18px;
+/* List / Card mode */
+.list-view .gallery-section,
+.card-view .gallery-section {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.list-view .menu-card,
+.card-view .menu-card {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.gallery-view .gallery-section {
+  display: block;
+}
+
+.gallery-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin: 64px 0 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* ===== ENHANCED GALLERY TILES ===== */
+.gallery-tile {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInTile 0.6s ease forwards;
+}
+
+/* Staggered fade-in animation */
+@keyframes fadeInTile {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-tile:nth-child(1) { animation-delay: 0.1s; }
+.gallery-tile:nth-child(2) { animation-delay: 0.2s; }
+.gallery-tile:nth-child(3) { animation-delay: 0.3s; }
+.gallery-tile:nth-child(4) { animation-delay: 0.4s; }
+.gallery-tile:nth-child(5) { animation-delay: 0.5s; }
+.gallery-tile:nth-child(6) { animation-delay: 0.6s; }
+.gallery-tile:nth-child(7) { animation-delay: 0.7s; }
+.gallery-tile:nth-child(8) { animation-delay: 0.8s; }
+.gallery-tile:nth-child(9) { animation-delay: 0.9s; }
+
+/* Parallax zoom effect on background */
+.gallery-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: 100%;
+  background-position: center;
+  transition: transform 0.5s ease, background-size 0.5s ease;
+  z-index: -1;
+}
+
+.gallery-tile:hover::after {
+  transform: scale(1.1);
+}
+
+/* Desktop hover effect */
+.gallery-tile:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Mobile touch feedback */
+.gallery-tile:active {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+/* Focus state for accessibility */
+.gallery-tile:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.gallery-tile:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.gallery-tile:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Dark gradient overlay */
+.gallery-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+/* Enhanced gradient on hover */
+.gallery-tile:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent 60%);
+}
+
+/* Tile content wrapper */
+.tile-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Tile name */
+.tile-name {
+  font-weight: 500;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-tile:hover .tile-name {
+  opacity: 0.95;
+  transform: translateY(-4px);
+}
+
+/* Tile price - hidden by default */
+.tile-price {
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-tile:hover .tile-price {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== COFFEE IMAGES (CORRECT) ===== */
+.coffee-1, .coffee-1::after {
+  background-image: url("https://img.freepik.com/free-photo/latte-with-caramel-syrop-side-view_141793-1795.jpg?semt=ais_hybrid&w=740&q=80");
+}
+
+.coffee-2, .coffee-2::after {
+  background-image: url("https://thelittlestcrumb.com/wp-content/uploads/salted-caramel-macchiato-featured-image-1.jpg");
+}
+
+.coffee-3, .coffee-3::after {
+  background-image: url("https://swirlsofflavor.com/wp-content/uploads/2024/10/Ice-pumpkin-latte-DP-1200-feature-500x375.jpg");
+}
+
+.coffee-4, .coffee-4::after {
+  background-image: url("https://vb-1c8f6.kxcdn.com/wp-content/uploads/2023/11/hazelnut_coffee.jpg");
+}
+
+.coffee-5, .coffee-5::after {
+  background-image: url("https://images.unsplash.com/photo-1507133750040-4a8f57021571");
+}
+
+/* ===== DESSERT IMAGES (CORRECT) ===== */
+.dessert-1, .dessert-1::after {
+  background-image: url("https://images.unsplash.com/photo-1551024601-bec78aea704b");
+}
+
+.dessert-2, .dessert-2::after {
+  background-image: url("https://www.seriouseats.com/thmb/6Nr0_wr5wD6onIsMiklsr0dLdvA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__06__20160608-cherry-pie-vicky-wasik-1-55e5320bc4c043aaaaf013569e4517ec.jpg");
+}
+
+.dessert-3, .dessert-3::after {
+  background-image: url("https://www.crazyforcrust.com/wp-content/uploads/2024/03/chocolate-cupcakes-3.jpg");
+}
+
+.dessert-4, .dessert-4::after {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/62ec1fc995263d65f21175de/a315688c-55a9-404f-9dac-f346a4cf1ab8/Soft+and+Gooey+Cinnamon+Rolls%3A+The+Best+Cinnamon+Rolls+Recipe?format=2500w");
+}
+
+/* ===== SCROLLING IMPROVEMENTS ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+.menu-card,
+.gallery-section {
+  scroll-margin-top: 120px;
+}
+
+.menu-card {
+  padding-top: 8px;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-wrapper {
+  will-change: transform;
+}
+
+.menu {
+  scroll-snap-type: y proximity;
+}
+
+.menu-card,
+.gallery-section {
+  scroll-snap-align: start;
 }
