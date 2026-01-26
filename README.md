@@ -1,72 +1,100 @@
-# ☕ Camper’s Café — Responsive Menu UI
+ ☕ # Artisan Café Menu
 
-Camper’s Café is a responsive, aesthetic café menu interface built with a strong focus on layout adaptability, UX correctness, and visual restraint.
-The project explores how a single dataset can be presented through multiple layout paradigms while maintaining clarity, consistency, and smooth interaction.
-
-This is not a static design — it is a view-adaptive UI.
+A modern, interactive café menu website featuring three distinct view modes and elegant animations. Built with vanilla HTML, CSS, and JavaScript.
 
 Check out the live demo: [View Camper Cafe Menu](https://kishik-k.github.io/Cafe-Menu/
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9a16cda5-8797-4401-9f46-c6ecd510b967" />
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/42c604ef-51d0-45ca-8006-c121d2fbe16a" />
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/1bf6c4b2-5b67-4fb0-946a-682af0256b16" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/580db325-b178-4b60-b067-492d88250d50" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/546460c5-d79b-401f-a0f3-fcd0cf9005b1" />
+
+
 
 
 )
 
-✨ Key Features
+## ✨ Features
 
-List View & Card View Toggle
-Users can switch between a clean, editorial list layout and a modern card-based layout.
-The toggle is UX-safe: interactions are disabled mid-transition to prevent state conflicts.
+### View Modes
+- **List View** - Traditional vertical menu layout with categories
+- **Card View** - Split-screen card design for a modern presentation
+- **Gallery View** - Immersive photo gallery with interactive tiles
 
-Smooth Layout Transitions
-Transitions are handled without layout snapping by isolating animation layers, ensuring symmetry when switching between views.
+### Interactive Elements
+- **Hover Effects** - Gallery tiles pop out with parallax zoom on the background images
+- **Price Reveal** - Prices fade in smoothly when hovering over gallery items
+- **Staggered Animations** - Gallery tiles fade in sequentially for a polished entrance
+- **Smooth Transitions** - Seamless switching between different view modes
+- **Dynamic Backgrounds** - Background changes contextually based on the active view
 
-Mode-Aware Background System
-The page background subtly adapts to the active view mode, reinforcing context without distracting from content.
+### Accessibility
+- Keyboard navigation support with visible focus states
+- Semantic HTML structure
+- Touch-optimized for mobile devices
+- Responsive design for all screen sizes
 
-Mobile-First Responsiveness
-Menu items adapt intelligently across screen sizes:
+## 🎨 Design Highlights
 
-Desktop: aligned name–price rows
+- **Typography** - Playfair Display for elegant headings, Inter for clean body text
+- **Color Palette** - Warm, café-inspired tones with subtle accent colors
+- **Visual Depth** - Layered shadows, gradients, and parallax effects
+- **Mobile-First** - Fully responsive with optimized layouts for smaller screens
 
-Tablet: increased touch spacing
+## 🚀 Technologies Used
 
-Mobile: stacked layout with improved readability
+- HTML5
+- CSS3 (Custom Properties, Grid, Flexbox, Animations)
+- Vanilla JavaScript (No frameworks)
+- Google Fonts
 
-Sticky Section Headers (Mobile)
-Category headers remain visible while scrolling on smaller screens, improving navigation and usability.
+## 📦 Installation
 
-Clean, Icon-Free Visual Design
-A warm, café-inspired color palette with restrained typography and elevation — focused on clarity rather than decoration.
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/artisan-cafe-menu.git
+```
 
-🛠 Tech Stack
+2. Navigate to the project directory
+```bash
+cd artisan-cafe-menu
+```
 
-HTML5 — semantic structure
+3. Open `index.html` in your browser
+```bash
+# Or use a local server
+python -m http.server 8000
+# Then visit http://localhost:8000
+```
 
-CSS3 — Grid, custom properties, responsive design
+## 🎯 Usage
 
-Vanilla JavaScript — view toggling, transition control
+Simply click the view toggle buttons at the top of the page to switch between:
+- **List** - Classic menu format
+- **Card** - Side-by-side card layout
+- **Gallery** - Photo-focused presentation
 
-No frameworks or libraries
+Hover over gallery tiles to see interactive effects including price reveals and image zoom.
 
-🎯 Design & Engineering Goals
+## 📱 Browser Support
 
-Prioritize UX correctness over visual gimmicks
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-Avoid layout jank during complex transitions
+## 🤝 Contributing
 
-Ensure accessibility-friendly spacing and readability
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](your-issues-link).
 
-Keep the codebase understandable and extendable
+## 📝 License
 
-📱 Responsive Behavior Summary
-Device	Behavior
-Desktop	Two-column card view / aligned list view
-Tablet	Touch-friendly spacing, adaptive typography
-Mobile	Sticky headers, stacked items, clean price separation
-🚀 Why This Project
+This project is [MIT](LICENSE) licensed.
 
-This project was built to practice real-world frontend decision making:
-handling layout changes, animation timing, responsiveness, and user interaction states — not just styling.
+## 👏 Acknowledgments
 
-*Built with ☕ and lots of CSS*
+- Images sourced from Unsplash and Freepik
+- Fonts from Google Fonts
+- Inspired by modern café and restaurant websites
+
+---
+
+Made with ☕ and 💻
