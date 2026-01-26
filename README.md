@@ -5,7 +5,7 @@ A modern, interactive café menu website featuring three distinct view modes and
 Check out the live demo: [View Camper Cafe Menu](https://kishik-k.github.io/Cafe-Menu/
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/1bf6c4b2-5b67-4fb0-946a-682af0256b16" />
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/580db325-b178-4b60-b067-492d88250d50" />
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/546460c5-d79b-401f-a0f3-fcd0cf9005b1" />
+<img width="1900" height="1079" alt="image" src="https://github.com/user-attachments/assets/43bf9058-d38f-40af-8665-e843c6eed225" />
 
 
 
