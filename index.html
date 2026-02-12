@@ -1,252 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Documentation</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Menu</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="background-texture"></div>
+  <div class="menu">
+    <header class="menu-header">
+      <div class="menu-eyebrow">221-B Baker's Street</div>
+      <h1>Artisan Café</h1>
+      <p class="menu-sub">Handcrafted coffee & artisanal desserts</p>
+      <div class="view-toggle">
+        <button class="active" data-view="list">List</button>
+        <button data-view="card">Card</button>
+        <button data-view="gallery">Gallery</button>
+      </div>
+    </header>
 
-<nav id="navbar">
-    <header>Python Documentation</header>
-    <a href="#Introduction" class="nav-link">Introduction</a>
-    <a href="#What_You_Should_Already_Know" class="nav-link">What You Should Already Know</a>
-    <a href="#Python_and_Other_Languages" class="nav-link">Python and Other Languages</a>
-    <a href="#Hello_World" class="nav-link">Hello World</a>
-    <a href="#Variables" class="nav-link">Variables</a>
-    <a href="#Data_Types" class="nav-link">Data Types</a>
-</nav>
+    <main class="list-view">
+      <div class="content-wrapper">
+        <section class="menu-card coffee">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>Coffee</h2>
+            <div class="menu-items">
+              <div class="item">
+                <span class="name">Vanilla Latte</span>
+                <span class="price">$4.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Caramel Macchiato</span>
+                <span class="price">$5.00</span>
+              </div>
+              <div class="item">
+                <span class="name">Pumpkin Spice Latte</span>
+                <span class="price">$5.25</span>
+              </div>
+              <div class="item">
+                <span class="name">Hazelnut Coffee</span>
+                <span class="price">$4.25</span>
+              </div>
+              <div class="item">
+                <span class="name">Dark Mocha</span>
+                <span class="price">$4.75</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<main id="main-doc">
+        <section class="menu-card desserts">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+              <div class="item">
+                <span class="name">Glazed Donut</span>
+                <span class="price">$3.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Cherry Pie</span>
+                <span class="price">$6.00</span>
+              </div>
+              <div class="item">
+                <span class="name">Chocolate Cupcake</span>
+                <span class="price">$4.50</span>
+              </div>
+              <div class="item">
+                <span class="name">Cinnamon Roll</span>
+                <span class="price">$4.00</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-<!-- SECTION 1 -->
-<section class="main-section" id="Introduction">
-    <header>Introduction</header>
+      <!-- GALLERY SECTION -->
+      <section class="gallery-section">
+        <h2>Coffee</h2>
+        <div class="gallery-grid">
+          <div class="gallery-tile coffee-1" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Vanilla Latte</div>
+              <div class="tile-price">$4.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-2" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Caramel Macchiato</div>
+              <div class="tile-price">$5.00</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-3" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Pumpkin Spice Latte</div>
+              <div class="tile-price">$5.25</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-4" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Hazelnut Coffee</div>
+              <div class="tile-price">$4.25</div>
+            </div>
+          </div>
+          <div class="gallery-tile coffee-5" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Dark Mocha</div>
+              <div class="tile-price">$4.75</div>
+            </div>
+          </div>
+        </div>
 
-    <p>Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
+        <h2>Desserts</h2>
+        <div class="gallery-grid">
+          <div class="gallery-tile dessert-1" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Glazed Donut</div>
+              <div class="tile-price">$3.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-2" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Cherry Pie</div>
+              <div class="tile-price">$6.00</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-3" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Chocolate Cupcake</div>
+              <div class="tile-price">$4.50</div>
+            </div>
+          </div>
+          <div class="gallery-tile dessert-4" tabindex="0">
+            <div class="tile-content">
+              <div class="tile-name">Cinnamon Roll</div>
+              <div class="tile-price">$4.00</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <ul>
-        <li>
-            <div class="feature-icon">⚡</div>
-            <h3>Concise Syntax</h3>
-            <p>Python allows programmers to express concepts in fewer lines of code compared to many other languages.</p>
-        </li>
+    <footer class="menu-footer">
+      <a href="#">Visit Us</a>
+      <a href="https://github.com/Kishik-K" target="_blank">Git-Hub</a>
+    </footer>
+  </div>
 
-        <li>
-            <div class="feature-icon">🧠</div>
-            <h3>Readable Structure</h3>
-            <p>Designed for clarity, Python enables scalable programs for both small and enterprise-level systems.</p>
-        </li>
+  <script>
+    const buttons = document.querySelectorAll('.view-toggle button');
+    const main = document.querySelector('main');
 
-        <li>
-            <div class="feature-icon">♻️</div>
-            <h3>Automatic Memory Management</h3>
-            <p>Features dynamic typing and built-in garbage collection for efficient memory handling.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📦</div>
-            <h3>Rich Standard Library</h3>
-            <p>Often described as "batteries included" due to its powerful built-in modules and tools.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- SECTION 2 -->
-<section class="main-section" id="What_You_Should_Already_Know">
-    <header>Prerequisites</header>
-
-    <ul>
-        <li>
-            <div class="feature-icon">💻</div>
-            <h3>Programming Basics</h3>
-            <p>General understanding of logic, variables, and basic programming flow.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🗂</div>
-            <h3>System Familiarity</h3>
-            <p>Comfort with file systems and software installation.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🚀</div>
-            <h3>Learning Mindset</h3>
-            <p>Willingness to experiment and test code examples.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📚</div>
-            <h3>Concept Awareness</h3>
-            <p>Basic knowledge of loops, functions, and variables helps you progress faster.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- SECTION 3 -->
-<section class="main-section" id="Python_and_Other_Languages">
-    <header>Python vs Other Languages</header>
-
-    <code>x = 5</code>
-    <code>int x = 5;</code>
-
-    <ul>
-        <li>
-            <div class="feature-icon">🔄</div>
-            <h3>Dynamic Typing</h3>
-            <p>No need to declare variable types explicitly — Python determines types at runtime.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📐</div>
-            <h3>Indentation-Based Blocks</h3>
-            <p>Uses indentation instead of curly braces for defining structure.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">⚙️</div>
-            <h3>Interpreted Execution</h3>
-            <p>Executed line-by-line, making debugging simpler but slightly slower than compiled languages.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🌍</div>
-            <h3>Versatile Use Cases</h3>
-            <p>Widely used in AI, web development, automation, and data science.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- SECTION 4 -->
-<section class="main-section" id="Hello_World">
-    <header>Hello World</header>
-
-    <code>print("Hello, World!")</code>
-    <code>python hello.py</code>
-
-    <ul>
-        <li>
-            <div class="feature-icon">🖥</div>
-            <h3>Interactive Shell</h3>
-            <p>Run Python directly in terminal using REPL for quick testing.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📄</div>
-            <h3>Script Execution</h3>
-            <p>Create .py files and execute from command line.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🔍</div>
-            <h3>Simple Output</h3>
-            <p>The print() function is your primary tool for displaying output.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">⚡</div>
-            <h3>Minimal Boilerplate</h3>
-            <p>No need for complex class structures to run basic programs.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- SECTION 5 -->
-<section class="main-section" id="Variables">
-    <header>Variables</header>
-
-    <code>name = "Alice"</code>
-    <code>x, y, z = 1, 2, 3</code>
-
-    <ul>
-        <li>
-            <div class="feature-icon">📝</div>
-            <h3>Dynamic Creation</h3>
-            <p>Variables are created when first assigned a value.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🔠</div>
-            <h3>Naming Rules</h3>
-            <p>Must start with a letter or underscore and are case-sensitive.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📊</div>
-            <h3>Flexible Assignment</h3>
-            <p>Multiple variables can be assigned in one line.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🧩</div>
-            <h3>No Type Declaration</h3>
-            <p>Python automatically determines variable types.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- SECTION 6 -->
-<section class="main-section" id="Data_Types">
-    <header>Data Types</header>
-
-    <code>text = "Hello"</code>
-    <code>number = 42</code>
-
-    <ul>
-        <li>
-            <div class="feature-icon">🔤</div>
-            <h3>Text & Numeric</h3>
-            <p>Includes str, int, float, and complex.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">📚</div>
-            <h3>Collections</h3>
-            <p>List, tuple, range, dictionary, set.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">✅</div>
-            <h3>Boolean & None</h3>
-            <p>True, False, and NoneType are built-in types.</p>
-        </li>
-
-        <li>
-            <div class="feature-icon">🔍</div>
-            <h3>Type Checking</h3>
-            <p>Use type() to check the data type of a variable.</p>
-        </li>
-    </ul>
-</section>
-<!-- GITHUB CTA -->
-<footer class="github-footer">
-    <a href="https://github.com/Kishik-K" target="_blank" class="github-button">
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
         
-        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor"
-                d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 
-                0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69
-                -1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 
-                1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54
-                -2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1
-                -.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18
-                .91-.25 1.88-.38 2.85-.39.97.01 1.94.14 2.85.39
-                2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06
-                .73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69
-                .41.36.78 1.08.78 2.18 0 1.57-.01 2.83-.01 3.21
-                0 .3.2.66.79.55 4.56-1.52 7.85-5.83 7.85-10.91
-                C23.25 5.48 18.27.5 12 .5z"/>
-        </svg>
-
-        View My GitHub
-    </a>
-</footer>
-
-</main>
-
+        // Add switching class
+        main.classList.add('switching');
+        
+        setTimeout(() => {
+          // Update active button
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          // Update view
+          main.className = view + '-view';
+          
+          // Remove switching class
+          setTimeout(() => {
+            main.classList.remove('switching');
+          }, 100);
+        }, 350);
+      });
+    });
+  </script>
 </body>
 </html>
