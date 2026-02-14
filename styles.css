@@ -9,11 +9,11 @@
 
 /* VARIABLES */
 :root {
-  --ink: #1e1e1e;
-  --muted: #6b6863;
-  --paper: rgba(250,249,247,0.95);
-  --line: rgba(0,0,0,0.08);
-  --accent: #9b7a54;
+  --ink: #e8e8e8;
+  --muted: #a89f94;
+  --paper: rgba(26,24,22,0.95);
+  --line: rgba(212,175,55,0.15);
+  --accent: #d4af37;
 
   --bg-list: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
   --bg-card: url("https://images.unsplash.com/photo-1445116572660-236099ec97a0");
@@ -122,7 +122,7 @@ main.switching .content-wrapper {
 
 /* CARD */
 .menu-card {
-  background: #fff;
+  background: #1a1818;
   border: 1px solid var(--line);
   margin-bottom: 96px;
   overflow: hidden;
